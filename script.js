@@ -82,7 +82,7 @@ let intervalId = null; // Variable para almacenar el ID del intervalo
           setTimeout(function() {
             $onElement.removeClass('on').addClass('not-normal');
           }, 100);
-        }, 2800);
+        }, 1800);
       }, timeOut);
     });
     
