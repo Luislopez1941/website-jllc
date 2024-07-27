@@ -1,6 +1,6 @@
 :root {
 
-    --color-black: #0F0E17;
+    --color-black: #0e0e0e;
     --color-white: #fff;
     --color-fuchsia: #FF00E6;
     --color-lime-green: #d2fc51;
@@ -270,7 +270,6 @@ body {
 /*================Start of Main===================*/
 
 .main {
-  background-color: var(--color-black);
   color: #D2D4E1;
 }
 
@@ -336,7 +335,7 @@ body {
 .services__item {
   padding: 20px;
   border-radius: 10px;
-  background-color: #171B2C;
+  background-color: #1b1b1b;
   color: #D2D4E1;
 
 }
@@ -482,7 +481,7 @@ body {
   border-radius: 1000px;
   margin: 150px auto;
   padding: 0 20px;
-  background-color: #171B2C;
+  background-color: #1b1b1b;
   color: #D2D4E1;
   display: flex;
   align-items: center;
