@@ -305,86 +305,130 @@ body {
   justify-content: space-between;
 }
 
-.services {
-    width: 90%;
-    margin: 0 auto;
+
+.main .row__one {
+   width: 90%;
+   margin: 0 auto;
+
 }
 
-.services h2 {
+.title__services h2 {
   font-size: 2.3rem;
   color: #D2D4E1;
   padding: 20px 0;
   font-weight: 800;
- 
- 
 }
 
-.title__services {
-  
-}
 
-.container__services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 310px;
-    gap: 20px;
-    height: 400px;
-    margin: 0 auto;
+.services__carousel {
+  width: 100%;
+  position: relative;
 }
-
-.services__item {
-  padding: 20px;
-  border-radius: 10px;
+.services__carousel i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
   background-color: #1b1b1b;
-  color: #D2D4E1;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.services__carousel i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.services__carousel i:first-child{
+  left: -45px;
+}
+.services__carousel i:last-child{
+  right: -45px;
+}
+.services__carousel .services__carousel_container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0;
+}
+.services__carousel_container::-webkit-scrollbar {
+  display: none;
+}
+.services__carousel_container.no-transition {
+  scroll-behavior: auto;
+}
+.services__carousel_container.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.services__carousel_container.dragging .service__card {
+  cursor: grab;
+  user-select: none;
+}
+.services__carousel_container :where(.service__card, .img) {
 
 }
-
-.slider {
-  overflow: hidden;
+.services__carousel_container .service__card {
+  scroll-snap-align: start;
+  list-style: none;
+  background-color: #1b1b1b;
+  cursor: pointer;
+  padding: 20px 15px;
+  border-radius: 10px;
 }
+
+
+
+@media screen and (max-width: 900px) {
+  .services__carousel .services__carousel_container {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services__carousel .services__carousel_container {
+    grid-auto-columns: 100%;
+  }
+}
+
+
+
 
 .uxui {
   display: flex;
   padding: 10px;
-
   justify-content: space-between;
 }
 
 
 
 .container__item {
-  min-height: 160px;
-  text-align: justify;
-  height: auto;
- 
+  text-align: justify; 
 }
 
-.container__item h3 {
-
-}
 
 .programing__web {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-
-  justify-content: space-between;
 }
 
-.programing__web h3 {
-
-}
 
 .ceo-sem {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-
-  justify-content: space-between;
 }
-
-
 
 .code-solid {
   width: 40px;
@@ -398,29 +442,26 @@ body {
   width: 35px;
 }
 
-.container__btn .btn {
-  background-color: var(--color-yellow);
-  
+
+.carousel-indicators {
+  display: none;
+  justify-content: center;
   margin-top: 10px;
-  padding: 10px 30px;
-  border-radius: 5px;
-  border: solid 2px var(--color-yellow);
-  transition: background-color 0.3s, transform 0.3s;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
   cursor: pointer;
-
+  transition: background-color 0.3s;
 }
 
-.container__btn .btn:hover {
-  background-color: var(--color-yellow);
-  transform: scale(1.1);
-  border: solid 2px var(--color-yellow);
+.indicator.active {
+  background-color: #333;
 }
-
-.container__btn .btn:active {
-  transform: scale(.9);
-
-}
-
 
 
 /* 
@@ -453,6 +494,25 @@ body {
 }
 
 
+.carousel-indicators_why {
+  display: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator_why {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator_why.active {
+  background-color: #333;
+}
 
 
 
@@ -521,7 +581,7 @@ body {
 }
 
 .briefcase__container {
-  display: flex;
+  display: block;
 
 }
 .briefcase__left {
@@ -670,14 +730,171 @@ body {
 }
 
 
-/* Parent wrapper */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  margin: auto;
-  max-width: 100vw;
+
+
+
+
+
+
+
+
+
+
+
+/* 
+///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+===================== Informacion adicional ======================  
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+*/
+
+
+
+.additional__information_container {
+  width: 90%;
+  margin: 0 auto;
 }
+
+.additional__information {
+  width: 100%;
+  position: relative;
+}
+.additional__information i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  background-color: #1b1b1b;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.additional__information i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.additional__information i:first-child{
+  left: -45px;
+}
+.additional__information i:last-child{
+  right: -45px;
+}
+.additional__information .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0;
+}
+.additional__information .carousel::-webkit-scrollbar {
+  display: none;
+}
+.additional__information .carousel.no-transition {
+  scroll-behavior: auto;
+}
+.additional__information .carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.additional__information .carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.additional__information .carousel :where(.card, .img) {
+
+}
+.additional__information .carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+  background-color: #1b1b1b;
+  cursor: pointer;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+
+
+.uxui {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+
+
+.container__item {
+  text-align: justify; 
+}
+
+
+.programing__web {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.ceo-sem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.code-solid {
+  width: 40px;
+}
+
+.pen-nib-solid {
+  width: 35px;
+}
+
+.google {
+  width: 35px;
+}
+
+
+.carousel-indicators_a-i {
+  display: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator_a-i {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator_a-i.active {
+  background-color: #333;
+}
+
+@media screen and (max-width: 900px) {
+  .additional__information .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .additional__information .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
 
 
 
@@ -701,17 +918,43 @@ body {
   margin: 0 auto;
 }
 
+.briefcase__options {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
 
-.briefcase__container > .jobs__done {
-    display: grid;
+.briefcase__container > .briefcase__options > button {
+ 
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.briefcase__container > .briefcase__options > button:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+
+.briefcase__container .jobs__done {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.briefcase__container > .jobs__done > div {
+.briefcase__container .jobs__done > div {
 
 }
 
-.briefcase__container > .jobs__done > div > img {
+.briefcase__container .jobs__done > div > img {
   width: 100%;
 }
 
@@ -1008,6 +1251,21 @@ body {
    
   }
 
+  .carousel-indicators {
+    display: flex;
+  }
+
+  .carousel-indicators_a-i {
+    display: flex;
+  }
+
+  .carousel-indicators_why {
+    display: flex;
+  }
+
+  .btn__service-card {
+    display: none !important;
+  }
 
   
 
@@ -1282,7 +1540,6 @@ body {
 }
 
 .briefcase__container > .jobs__done {
-  display: grid;
   grid-template-columns: 1fr;
 }
 
@@ -1426,3 +1683,18 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+.content {
+  display: none;
+}
+.content.active {
+  display: grid;
+}
