@@ -892,7 +892,16 @@ body {
 @media screen and (max-width: 600px) {
   .additional__information .carousel {
     grid-auto-columns: 100%;
+    
   }
+
+  
+  .additional__information i {
+    display: none;
+  }
+
+
+
 }
 
 
@@ -1112,6 +1121,7 @@ body {
   body {
     overflow-x: hidden;
   }
+
 
 
   /*/////////////////////// toggle///////////////////// */
@@ -1413,12 +1423,6 @@ body {
     overflow: hidden;
   }
 
-  .slide {
-  
-    margin: 0 auto;
-    height: 300px; /* Ajusta la altura según tus necesidades */
-    display: none;
-  }
 
   .slide.active {
     display: block;
@@ -1453,6 +1457,8 @@ body {
   .right__a-i {
     margin-top: 40px;
   }
+
+
 
   
 
