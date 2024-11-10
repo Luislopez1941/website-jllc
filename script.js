@@ -462,3 +462,38 @@ buttons.forEach(button => {
 // Activar el primer contenedor y botón al cargar la página
 document.querySelector('.content').classList.add('active');
 buttons[0].classList.add('active');
+
+
+
+
+const services = [
+    { name: "Plomero", icon: "🔧" },
+    { name: "Electricista", icon: "⚡" },
+    { name: "Cerrajero", icon: "🔑" },
+    { name: "Limpiador", icon: "✨" },
+    { name: "Jardinero", icon: "✂️" },
+    { name: "Pintor", icon: "🖌️" },
+    { name: "Albañil", icon: "🔨" },
+    { name: "Técnico en electrodomésticos", icon: "📱" }
+];
+
+// Selecciona el contenedor donde se añadirán los servicios
+const servicesGrid = document.getElementById('services-grid');
+
+// Genera las tarjetas de servicio dinámicamente
+services.forEach(service => {
+    const card = document.createElement('div');
+    card.className = 'service-card';
+
+    const icon = document.createElement('div');
+    icon.className = 'service-icon';
+    icon.textContent = service.icon;
+
+    const name = document.createElement('div');
+    name.className = 'service-name';
+    name.textContent = service.name;
+
+    card.appendChild(icon);
+    card.appendChild(name);
+    servicesGrid.appendChild(card);
+});

@@ -474,6 +474,7 @@ body {
 .choose__us {
   width: 100%;
   padding: 0;
+  
 
 }
 
@@ -491,6 +492,7 @@ body {
 .container__right__choose-us > h2 {
   font-size: 2.3rem;
   font-weight: 800;
+  color: var(--color-text);
 }
 
 
@@ -616,10 +618,7 @@ body {
 */
 
 .our__clients {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-
+  margin: 150px 0;
 }
 
 .our__clients_container {
@@ -643,7 +642,7 @@ body {
 
 
 :root {
-  --color-text: navy;
+  /* --color-text: navy; */
   --color-bg: papayawhip;
   --color-bg-accent: #ecdcc0;
   --size: clamp(50px, 1rem + 30vmin, 20rem);
@@ -655,7 +654,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: papayawhip;
+    /* --color-text: papayawhip; */
     --color-bg: navy;
     --color-bg-accent: #2626a0;
   }
@@ -753,7 +752,7 @@ body {
 
 .additional__information_container {
   width: 90%;
-  margin: 0 auto;
+  margin: 150px auto;
 }
 
 .additional__information {
@@ -815,13 +814,58 @@ body {
 
 }
 .additional__information .carousel .card {
-  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
   background-color: #1b1b1b;
   cursor: pointer;
   padding: 20px 15px;
   border-radius: 10px;
+
+
 }
+
+.additional__information .carousel .card.one .img {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
+  url('./assest/main/images/athoners/ecommerce.png');
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+.additional__information .carousel .card.two .img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
+  url('./assest/main/images/athoners/crm.png');
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+.additional__information .carousel .card.three .img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
+  url('./assest/main/images/athoners/movil.png');
+  background-size: cover;
+  background-position: center;
+
+}
+
+
 
 
 .uxui {
@@ -832,7 +876,7 @@ body {
 
 
 
-.container__item {
+.additional__information .carousel .container__item {
   text-align: justify; 
 }
 
@@ -966,7 +1010,7 @@ body {
 .briefcase__container .jobs__done > div > img {
   width: 100%;
 }
-
+mc 
 
 
 /*==================Satart of Footer=============*/
@@ -1208,6 +1252,8 @@ body {
       display: block;
       
   }
+
+
   .left {
     display: flex;
     align-items: center;
@@ -1288,7 +1334,7 @@ body {
 
 .choose__us {
   width: 100%;
-  padding: 0;
+  margin: 150px 0;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -1487,10 +1533,11 @@ body {
 
 .btn__pr_movil > button {
   padding: 15px 40px;
-  border: 2px solid #ffb340;
-  background-color: transparent;
-  border-radius: 5px;
+  background-color: #ffb3403b;
+  border: none;
+  border-radius: 50px;
   color: #ffb340;
+  font-weight: 600;
 }
 
 
@@ -1703,4 +1750,81 @@ body {
 }
 .content.active {
   display: grid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background-color: #1b1b1b;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-container {
+  background-color: #e0f2fe;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.service-card:hover .icon-container {
+  background-color: #bfdbfe;
+}
+
+.icon-container i {
+  color: #2563eb;
+  font-size: 1.75rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-card:hover .icon-container i {
+  color: #1d4ed8;
+}
+
+.service-card p {
+  margin: 0;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
