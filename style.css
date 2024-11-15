@@ -537,7 +537,7 @@ body {
 }
 
 
-.container__left-choose-us > div {
+.container__left-choose-us > div  {
   width: 400px;
   height: 400px;
   border-radius: 1000px;
@@ -834,34 +834,30 @@ body {
   border-radius: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
   url('./assest/main/images/athoners/ecommerce.png');
-  background-size: cover;
-  background-position: center;
 
 
 }
 
 .additional__information .carousel .card.two .img {
   height: 300px;
+  width: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
   url('./assest/main/images/athoners/crm.png');
-  background-size: cover;
-  background-position: center;
 
 }
 
 
 .additional__information .carousel .card.three .img {
   height: 300px;
+  width: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233)),
   url('./assest/main/images/athoners/movil.png');
-  background-size: cover;
-  background-position: center;
 
 }
 
@@ -1783,12 +1779,16 @@ mc
 }
 
 .service-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #1b1b1b;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  padding: 20px;
   text-align: center;
   transition: all 0.3s ease-in-out;
+ 
 }
 
 .service-card:hover {
@@ -1827,4 +1827,17 @@ mc
   color: #4b5563;
   font-weight: 500;
   font-size: 1.1rem;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
 }
